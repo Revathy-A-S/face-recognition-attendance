@@ -31,18 +31,19 @@ Before installing the dependencies, make sure you have:
 
 ## 📦 Installation
 
-1. Clone the repository:  
+1. Clone the repository:
+   <pre>
    git clone https://github.com/Revathy-A-S/face-recognition-attendance.git  
-   
    cd face-recognition-attendance
-   
+   </pre>
 2.Install dependencies:  
+<pre>
   pip install -r requirements.txt
-
+</pre>
 3.If dlib fails to build, install it manually from the provided wheel:  
-
+<pre>
   pip install dlib-19.24.1-cp311-cp311-win_amd64.whl
-
+</pre>
 ## 🧠 How It Works
 ### Training:
 
@@ -71,6 +72,7 @@ Make sure face_encodings.pkl is already generated using your training images.
   streamlit run app.py
 
 ### 📂 Project Structure  
+<pre>
 face-recognition-attendance/  
 ├── app.py                     # Streamlit application  
 ├── face_recognition_model.py  # Face encoding/training script  
@@ -79,38 +81,37 @@ face-recognition-attendance/
 ├── dlib-19.24.1-*.whl         # Precompiled dlib for Windows  
 ├── README.md                  # Documentation  
 └── images/                    # Folder with training images  
-<pre>
-    └── Person1/  
-        └── image1.jpg  
-</pre>pre>
+      └── Person1/  
+          └── image1.jpg  
+</pre>
 
 ### 📊 Sample Attendance Flow
 
-Run the app
-A webcam window opens
-Individuals approach the camera
-Faces are recognized and marked as present
-Attendance table updates live
-Press Stop in the app to end the session
+Run the app  
+A webcam window opens  
+Individuals approach the camera  
+Faces are recognized and marked as present  
+Attendance table updates live  
+Press Stop in the app to end the session  
 
 
 ### 🧰 Technologies Used
 
-Python 3.11
-OpenCV
-face_recognition (based on dlib)
-Streamlit
-CMake (required for dlib)
+Python 3.11  
+OpenCV  
+face_recognition (based on dlib)  
+Streamlit  
+CMake (required for dlib)  
 
 ### 🧪 Future Improvements
 
-Store attendance logs in a CSV or database
-Support for re-training within the app
-Export attendance table
-Face masking/detection alerts
+Store attendance logs in a CSV or database  
+Support for re-training within the app  
+Export attendance table  
+Face masking/detection alerts  
 
 ### ✉️ Contact
-Created by Revathy A S
-📫 Email: revathyas0606@gmail.com
-🔗 GitHub: github.com/Revathy-A-S
-⭐ If you like this project, feel free to star the repo and share your feedback!
+Created by Revathy A S  
+📫 Email: revathyas0606@gmail.com  
+🔗 GitHub: github.com/Revathy-A-S  
+⭐ If you like this project, feel free to star the repo and share your feedback!  
