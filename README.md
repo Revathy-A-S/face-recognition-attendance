@@ -111,3 +111,4 @@ Face masking/detection alerts
 Created by Revathy A S
 📫 Email: revathyas0606@gmail.com
 🔗 GitHub: github.com/Revathy-A-S
+⭐ If you like this project, feel free to star the repo and share your feedback!
