@@ -79,7 +79,7 @@ face-recognition-attendance/
 ├── dlib-19.24.1-*.whl         # Precompiled dlib for Windows  
 ├── README.md                  # Documentation  
 └── images/                    # Folder with training images  
-    └── Person1/  
+- └── Person1/  
         └── image1.jpg  
 
 
