@@ -56,6 +56,8 @@ Example: images/JohnDoe/image1.jpg, images/JaneDoe/image2.jpg.
 
 Run face_recognition_model.py to generate face_encodings.pkl.
 
+Note: The current face_encodings.pkl file in the repository is trained using images of actors Mammootty and Mohanlal, and footballer Cristiano Ronaldo.
+
 ### Attendance:
 
 Launch the app with streamlit run app.py.
