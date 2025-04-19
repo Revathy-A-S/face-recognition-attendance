@@ -31,15 +31,15 @@ Before installing the dependencies, make sure you have:
 
 ## 📦 Installation
 
-1. Clone the repository:
-   git clone https://github.com/Revathy-A-S/face-recognition-attendance.git
+1. Clone the repository:  
+   git clone https://github.com/Revathy-A-S/face-recognition-attendance.git  
    
    cd face-recognition-attendance
    
-2.Install dependencies:
+2.Install dependencies:  
   pip install -r requirements.txt
 
-3.If dlib fails to build, install it manually from the provided wheel:
+3.If dlib fails to build, install it manually from the provided wheel:  
 
   pip install dlib-19.24.1-cp311-cp311-win_amd64.whl
 
@@ -70,8 +70,8 @@ Make sure face_encodings.pkl is already generated using your training images.
 
   streamlit run app.py
 
-### 📂 Project Structure
-face-recognition-attendance/
+### 📂 Project Structure  
+face-recognition-attendance/  
 ├── app.py                     # Streamlit application  
 ├── face_recognition_model.py  # Face encoding/training script  
 ├── face_encodings.pkl         # Pickled face encodings  
