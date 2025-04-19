@@ -13,4 +13,5 @@ pipreqs==0.5.0
 pickleshare==0.7.5
 parso==0.8.4
 pandocfilters==1.5.1
+streamlit==1.32.0
 
