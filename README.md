@@ -72,15 +72,15 @@ Make sure face_encodings.pkl is already generated using your training images.
 
 ### 📂 Project Structure
 face-recognition-attendance/
-├── app.py                     # Streamlit application
-├── face_recognition_model.py  # Face encoding/training script
-├── face_encodings.pkl         # Pickled face encodings
-├── requirements.txt           # Python dependencies
-├── dlib-19.24.1-*.whl         # Precompiled dlib for Windows
-├── README.md                  # Documentation
-└── images/                    # Folder with training images
-    └── Person1/
-        └── image1.jpg
+├── app.py                     # Streamlit application  
+├── face_recognition_model.py  # Face encoding/training script  
+├── face_encodings.pkl         # Pickled face encodings  
+├── requirements.txt           # Python dependencies  
+├── dlib-19.24.1-*.whl         # Precompiled dlib for Windows  
+├── README.md                  # Documentation  
+└── images/                    # Folder with training images  
+    └── Person1/  
+        └── image1.jpg  
 
 
 ### 📊 Sample Attendance Flow
