@@ -9,9 +9,13 @@ from datetime import datetime
 with open("face_encodings.pkl", "rb") as f:
     encoded_faces, classnames = pickle.load(f)
 
-# Attendance storage
-attendance = set()
-attendance_list = []
+# Initialize session state variables
+if "stop_cam" not in st.session_state:
+    st.session_state.stop_cam = False
+if "attendance" not in st.session_state:
+    st.session_state.attendance = set()
+if "attendance_list" not in st.session_state:
+    st.session_state.attendance_list = []
 
 st.title("📸 Face Recognition Attendance System")
 
@@ -19,26 +23,26 @@ st.title("📸 Face Recognition Attendance System")
 start = st.button("Start Camera")
 stop = st.button("Stop Camera")
 
-# Streamlit placeholder for frame and table
+# Streamlit placeholders
 frame_placeholder = st.empty()
 table_placeholder = st.empty()
 
 # Utility: Mark attendance
 def mark_attendance(name):
-    if name not in attendance:
-        attendance.add(name)
-        attendance_list.append({
+    if name not in st.session_state.attendance:
+        st.session_state.attendance.add(name)
+        st.session_state.attendance_list.append({
             "Name": name,
             "Time": datetime.now().strftime("%H:%M:%S")
         })
 
-# Webcam logic
-if start and not stop:
+# Handle camera start
+if start:
+    st.session_state.stop_cam = False
     cap = cv2.VideoCapture(0)
-
     st.info("Camera started. Look into the camera to mark attendance.")
-    
-    while True:
+
+    while cap.isOpened():
         ret, frame = cap.read()
         if not ret:
             break
@@ -61,7 +65,7 @@ if start and not stop:
 
             mark_attendance(name)
 
-            # Draw box and label on frame
+            # Draw box and label
             top, right, bottom, left = [v * 4 for v in face_loc]
             cv2.rectangle(frame, (left, top), (right, bottom), (0, 255, 0), 2)
             cv2.putText(frame, name, (left, top - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (255, 255, 255), 2)
@@ -71,16 +75,20 @@ if start and not stop:
         frame_placeholder.image(frame_rgb, channels="RGB")
 
         # Show attendance table
-        table_placeholder.table(attendance_list)
+        table_placeholder.table(st.session_state.attendance_list)
 
-        # Break if "Stop Camera" is pressed
-        if st.session_state.get("stop_cam", False):
+        # Break if stop is pressed
+        if st.session_state.stop_cam:
             break
 
     cap.release()
     cv2.destroyAllWindows()
     st.success("Camera stopped.")
 
-# Manage stop trigger
+# Handle stop
 if stop:
-    st.session_state["stop_cam"] = True
+    st.session_state.stop_cam = True
+
+# Always show the attendance table
+if st.session_state.attendance_list:
+    table_placeholder.table(st.session_state.attendance_list)
